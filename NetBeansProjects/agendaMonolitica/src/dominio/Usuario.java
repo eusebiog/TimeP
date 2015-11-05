@@ -2,6 +2,7 @@ package dominio;
 
 import java.io.Serializable;
 import java.util.Vector;
+import persistencia.Acceso;
 
 public class Usuario implements Serializable{
 
@@ -72,18 +73,18 @@ public class Usuario implements Serializable{
         
 
 	public void guardarUsuario() {
-            
-            
-            
+            Acceso.guardarUsuario(this);
 	}
 
 	public static Usuario leerUsuario(String nombre,String contrasenna) {
-            
-            
-            
-            
-            
-            return null;
+            Usuario u=Acceso.leerUsuario(nombre);
+            return contrasenna.equals(u.getContrasenna())?u:null;
 	}
+
+    @Override
+    public String toString() {
+        return "Usuario{" + "nombre=" + nombre + ", apellidos=" + apellidos + ","
+                + " contrasenna=" + contrasenna + ", contactos=" + contactos + '}';
+    }
 
 }

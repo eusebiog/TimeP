@@ -9,7 +9,7 @@ import java.io.ObjectOutputStream;
 public class Acceso {
 
 	public static Usuario leerUsuario(String nombre) {
-            Usuario r=null;
+            Usuario r=new Usuario("","","");
              try{
                 ObjectInputStream ois = new ObjectInputStream(
                         new FileInputStream("usuarios/"+nombre));

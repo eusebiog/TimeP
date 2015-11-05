@@ -12,18 +12,18 @@ public class InterfazUsuario {
 	public void mostrarMenu() throws Exception {
             boolean salir=false;
             String menu="===MENU===\n"
-                    + "1. Autenticarse"
-                    + "2. Annadir contacto"
-                    + "3. Buscar contacto"
-                    + "4. Borrar contacto"
-                    + "5. Modificar contacto"
-                    + "6. Registrar contacto"
+                    + "1. Autenticarse\n"
+                    + "2. Annadir contacto\n"
+                    + "3. Buscar contacto\n"
+                    + "4. Borrar contacto\n"
+                    + "5. Modificar contacto\n"
+                    + "6. Registrar usuario\n"
                     + "7. Salir";
             do{
                 switch(Leer.entero(menu)){
                     case 1:
                         u=autenticarusuario();
-                        if(u.equals(null)){
+                        if(u==null){
                             System.out.println("Nombre de usuario o contrasenna "
                                     + "erroneos");
                         }
@@ -76,7 +76,7 @@ public class InterfazUsuario {
                         break;
                     case 6:
                         registrarusuario();
-                        System.out.println("Usuario registrado");
+                        System.out.println("Usuario registrado con exito");
                         break;
                     case 7:
                         salir=true;
@@ -101,16 +101,15 @@ public class InterfazUsuario {
 	}
         
 	public void registrarusuario() {
-            System.out.println("Usuario nuevo");
+            System.out.println("==Usuario nuevo==");
             System.out.println("Nombre de usuario");
             String nombre=Leer.cadena();
             System.out.println("Apellidos del usuario");
             String apellidos=Leer.cadena();
             System.out.println("contrasenna");
             String contrasenna=Leer.cadena();
-            
-            Usuario u=new Usuario(nombre,apellidos,contrasenna);
-            
+            System.out.println(contrasenna);
+            OperacionesUsuario.registrarUsuario(nombre,apellidos,contrasenna);
             
 	}
 
@@ -120,8 +119,8 @@ public class InterfazUsuario {
             String nombre=Leer.cadena();
             System.out.println("Contrasenna");
             String contrasenna=Leer.cadena();
-            
-            return OperacionesUsuario.autenticarUsuario(nombre, contrasenna);
+            Usuario usuario=OperacionesUsuario.autenticarUsuario(nombre, contrasenna);
+            return usuario;
             
             
 	}

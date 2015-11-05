@@ -4,7 +4,9 @@ import java.util.Vector;
 
 public class OperacionesUsuario {
 
-	public static void registrarUsuario(Usuario u) {
+	public static void registrarUsuario(String nombre,
+                String apellidos,String contrasenna) {
+            Usuario u=new Usuario(nombre, apellidos,contrasenna);
             u.guardarUsuario();
 	}
 
