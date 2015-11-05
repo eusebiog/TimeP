@@ -2,8 +2,6 @@ package dominio;
 
 public class OperacionesUsuario {
 
-	private Usuario usuario;
-
 	public void registrarUsuario() {
 		// TODO - implement OperacionesUsuario.registrarUsuario
 		throw new UnsupportedOperationException();
@@ -14,9 +12,9 @@ public class OperacionesUsuario {
 		throw new UnsupportedOperationException();
 	}
 
-	public void annadirContacto() {
-		// TODO - implement OperacionesUsuario.annadirContacto
-		throw new UnsupportedOperationException();
+	public static void annadirContacto(Usuario u,Contacto c) {
+            u.annadirContacto(c);
+            
 	}
 
 	public void borrarContacto() {

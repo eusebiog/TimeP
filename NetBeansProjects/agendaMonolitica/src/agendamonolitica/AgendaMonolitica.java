@@ -5,6 +5,8 @@
  */
 package agendamonolitica;
 
+import presentacion.InterfazUsuario;
+
 /**
  *
  * @author ordenador
@@ -16,6 +18,8 @@ public class AgendaMonolitica {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        InterfazUsuario iu=new InterfazUsuario();
+        
     }
     
 }

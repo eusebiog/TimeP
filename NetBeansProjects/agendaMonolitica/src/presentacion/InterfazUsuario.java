@@ -1,10 +1,43 @@
 package presentacion;
 
-public class InterfazUsuario {
+import dominio.Usuario;
 
-	public void mostrarMenu() {
-		// TODO - implement InterfazUsuario.mostrarMenu
-		throw new UnsupportedOperationException();
+public class InterfazUsuario {
+    
+    
+        Usuario u;
+
+	public void mostrarMenu() throws Exception {
+            boolean salir=false;
+            String menu="===MENU===\n"
+                    + "1. Annadir contacto";
+            do{
+                switch(Leer.entero(menu)){
+                    case 1:
+                        annadircontacto();
+                        break;
+                        
+                    
+                    case 2:
+                        salir=true;
+                        break;
+                    
+                }
+                
+                
+                
+                
+                
+            }while(!salir);
+            
+            
+            
+            
+            
+            
+            
+            
+            
 	}
 
 	public void registrarusuario() {

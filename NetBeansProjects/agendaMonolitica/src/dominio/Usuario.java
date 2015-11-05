@@ -1,5 +1,7 @@
 package dominio;
 
+import java.util.Vector;
+
 public class Usuario {
 
 	private String nombre;
@@ -54,15 +56,20 @@ public class Usuario {
 	public void setContactos(Vector<Contacto> contactos) {
 		this.contactos = contactos;
 	}
+        
+        public void annadirContacto(Contacto c){
+            contactos.add(c);
+        }
+        
+        
 
 	public void guardarUsuario() {
 		// TODO - implement Usuario.guardarUsuario
 		throw new UnsupportedOperationException();
 	}
 
-	public void leerUsuario() {
-		// TODO - implement Usuario.leerUsuario
-		throw new UnsupportedOperationException();
+	public static Usuario leerUsuario() {
+            return null;
 	}
 
 }
