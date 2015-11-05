@@ -8,14 +8,16 @@ public class OperacionesUsuario {
             u.guardarUsuario();
 	}
 
-	public Usuario autenticarUsuario() {
-		// TODO - implement OperacionesUsuario.autenticarUsuario
-		throw new UnsupportedOperationException();
+	public static Usuario autenticarUsuario(String nombre,String contrasenna) {
+            Usuario r= Usuario.leerUsuario(nombre,contrasenna);
+            return r;
+            
+            
 	}
 
 	public static void annadirContacto(Usuario u,Contacto c) {
             u.annadirContacto(c);
-            
+            u.guardarUsuario();
 	}
 
 	public static void borrarContacto(Contacto c,Usuario u) {
@@ -27,11 +29,13 @@ public class OperacionesUsuario {
                 }
             }
             u.setContactos(r);
+            u.guardarUsuario();
 	}
 
 	public static void modificarContacto(Usuario u,Contacto nuevo) {
             Contacto c=OperacionesUsuario.buscarContacto(u, nuevo.getNombre());
             c=nuevo;
+            u.guardarUsuario();
 	}
 
 	public static Contacto buscarContacto(Usuario u,String nombre) {

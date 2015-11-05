@@ -12,14 +12,26 @@ public class InterfazUsuario {
 	public void mostrarMenu() throws Exception {
             boolean salir=false;
             String menu="===MENU===\n"
-                    + "1. Annadir contacto"
-                    + "2. Buscar contacto"
-                    + "3. Borrar contacto"
-                    + "4. Modificar contacto"
-                    + "5. Registrar contacto";
+                    + "1. Autenticarse"
+                    + "2. Annadir contacto"
+                    + "3. Buscar contacto"
+                    + "4. Borrar contacto"
+                    + "5. Modificar contacto"
+                    + "6. Registrar contacto"
+                    + "7. Salir";
             do{
                 switch(Leer.entero(menu)){
                     case 1:
+                        u=autenticarusuario();
+                        if(u.equals(null)){
+                            System.out.println("Nombre de usuario o contrasenna "
+                                    + "erroneos");
+                        }
+                        else{
+                            System.out.println("Autenticado");
+                        }
+                        break;
+                    case 2:
                         if(u!=null){
                             annadircontacto();
                             System.out.println("Annadido");
@@ -28,10 +40,11 @@ public class InterfazUsuario {
                             System.out.println("No se ha logueado "
                                     + "en el sistema");
                         }
+                        
                         break;
                         
                     
-                    case 2:
+                    case 3:
                         if(u!=null){
                            System.out.println(buscarcontacto());
                         }
@@ -40,7 +53,7 @@ public class InterfazUsuario {
                                     + "en el sistema");
                         }
                         break;
-                    case 3:
+                    case 4:
                         if(u!=null){
                            borrarcontacto();
                             System.out.println("Contacto borrado ");
@@ -51,7 +64,7 @@ public class InterfazUsuario {
                         }
                         
                         break;
-                    case 4:
+                    case 5:
                         if(u!=null){
                             modificarcontacto();
                             
@@ -61,11 +74,11 @@ public class InterfazUsuario {
                                     + "en el sistema");
                         }
                         break;
-                    case 5:
+                    case 6:
                         registrarusuario();
                         System.out.println("Usuario registrado");
                         break;
-                    case 6:
+                    case 7:
                         salir=true;
                         break;
                     
@@ -101,9 +114,16 @@ public class InterfazUsuario {
             
 	}
 
-	public void autenticarusuario() {
-		// TODO - implement InterfazUsuario.autenticarusuario
-		throw new UnsupportedOperationException();
+	public Usuario autenticarusuario() {
+            
+            System.out.println("Nombre de usuario");
+            String nombre=Leer.cadena();
+            System.out.println("Contrasenna");
+            String contrasenna=Leer.cadena();
+            
+            return OperacionesUsuario.autenticarUsuario(nombre, contrasenna);
+            
+            
 	}
 
 	public void annadircontacto() {

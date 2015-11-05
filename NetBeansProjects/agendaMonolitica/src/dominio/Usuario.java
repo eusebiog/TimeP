@@ -1,8 +1,9 @@
 package dominio;
 
+import java.io.Serializable;
 import java.util.Vector;
 
-public class Usuario {
+public class Usuario implements Serializable{
 
 	private String nombre;
 	private String apellidos;
@@ -71,11 +72,17 @@ public class Usuario {
         
 
 	public void guardarUsuario() {
-		// TODO - implement Usuario.guardarUsuario
-		throw new UnsupportedOperationException();
+            
+            
+            
 	}
 
-	public static Usuario leerUsuario() {
+	public static Usuario leerUsuario(String nombre,String contrasenna) {
+            
+            
+            
+            
+            
             return null;
 	}
 
