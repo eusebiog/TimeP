@@ -30,9 +30,9 @@ public class OperacionesUsuario {
             u.setContactos(r);
 	}
 
-	public void modificarContacto() {
-		// TODO - implement OperacionesUsuario.modificarContacto
-		throw new UnsupportedOperationException();
+	public static void modificarContacto(Usuario u,Contacto nuevo) {
+            Contacto c=OperacionesUsuario.buscarContacto(u, nuevo.getNombre());
+            c=nuevo;
 	}
 
 	public static Contacto buscarContacto(Usuario u,String nombre) {
