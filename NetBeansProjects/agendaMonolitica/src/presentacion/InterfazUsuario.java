@@ -13,7 +13,8 @@ public class InterfazUsuario {
             boolean salir=false;
             String menu="===MENU===\n"
                     + "1. Annadir contacto"
-                    + "2. Buscar contacto";
+                    + "2. Buscar contacto"
+                    + "3. Borrar contacto";
             do{
                 switch(Leer.entero(menu)){
                     case 1:
@@ -38,6 +39,17 @@ public class InterfazUsuario {
                         }
                         break;
                     case 3:
+                        if(u!=null){
+                           borrarcontacto();
+                            System.out.println("Contacto borrado ");
+                        }
+                        else{
+                            System.out.println("No se ha logueado "
+                                    + "en el sistema");
+                        }
+                        
+                        break;
+                    case 4:
                         salir=true;
                         break;
                     
@@ -89,8 +101,8 @@ public class InterfazUsuario {
 	}
 
 	public void borrarcontacto() {
-		// TODO - implement InterfazUsuario.borrarcontacto
-		throw new UnsupportedOperationException();
+            Contacto c=buscarcontacto();
+            OperacionesUsuario.borrarContacto(c, u);
 	}
 
 	public void modificarcontacto() {

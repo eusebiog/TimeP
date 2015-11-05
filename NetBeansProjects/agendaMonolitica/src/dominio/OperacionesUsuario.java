@@ -19,9 +19,15 @@ public class OperacionesUsuario {
             
 	}
 
-	public void borrarContacto() {
-		// TODO - implement OperacionesUsuario.borrarContacto
-		throw new UnsupportedOperationException();
+	public static void borrarContacto(Contacto c,Usuario u) {
+            Vector<Contacto> contactos=u.getContactos();
+            Vector<Contacto> r=new Vector();
+            for(Contacto vc:contactos ){
+                if(!c.equals(vc)){
+                    r.add(vc);
+                }
+            }
+            u.setContactos(r);
 	}
 
 	public void modificarContacto() {
