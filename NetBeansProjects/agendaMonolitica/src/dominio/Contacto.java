@@ -7,6 +7,20 @@ public class Contacto {
 	private String telefono;
 	private String direccion;
 
+        
+        
+    public Contacto(String nombre, String apellidos, String telefono, String direccion) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.telefono = telefono;
+        this.direccion = direccion;
+    }
+
+        
+        
+        
+        
+        
 	public void getNombre() {
 		// TODO - implement Contacto.getNombre
 		throw new UnsupportedOperationException();

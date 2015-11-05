@@ -1,5 +1,7 @@
 package presentacion;
 
+import dominio.Contacto;
+import dominio.OperacionesUsuario;
 import dominio.Usuario;
 
 public class InterfazUsuario {
@@ -14,7 +16,14 @@ public class InterfazUsuario {
             do{
                 switch(Leer.entero(menu)){
                     case 1:
-                        annadircontacto();
+                        if(u!=null){
+                            annadircontacto();
+                            System.out.println("Annadido");
+                        }
+                        else{
+                            System.out.println("No se ha logueado "
+                                    + "en el sistema");
+                        }
                         break;
                         
                     
@@ -51,8 +60,22 @@ public class InterfazUsuario {
 	}
 
 	public void annadircontacto() {
-		// TODO - implement InterfazUsuario.annadircontacto
-		throw new UnsupportedOperationException();
+            System.out.println("Nombre del contacto nuevo");
+            String nombre=Leer.cadena();
+            System.out.println("Apellidos del contacto nuevo");
+            String apellidos=Leer.cadena();
+            System.out.println("Telefono del contacto nuevo");
+            String telefono=Leer.cadena();
+            System.out.println("Direccion del contacto nuevo");
+            String direccion=Leer.cadena();
+            
+            Contacto nuevo=new Contacto( nombre,  apellidos,
+                    telefono, direccion);
+            OperacionesUsuario.annadirContacto(u, nuevo);
+            
+            
+            
+            
 	}
 
 	public void borrarcontacto() {
