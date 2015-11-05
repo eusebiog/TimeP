@@ -1,5 +1,7 @@
 package dominio;
 
+import java.util.Vector;
+
 public class OperacionesUsuario {
 
 	public void registrarUsuario() {
@@ -27,9 +29,15 @@ public class OperacionesUsuario {
 		throw new UnsupportedOperationException();
 	}
 
-	public void buscarContacto() {
-		// TODO - implement OperacionesUsuario.buscarContacto
-		throw new UnsupportedOperationException();
+	public static Contacto buscarContacto(Usuario u,String nombre) {
+            Vector<Contacto> contactos=u.getContactos();
+            Contacto r=null;
+            for(Contacto c:contactos ){
+                if(c.getNombre().equals(nombre)){
+                    r=c;
+                }
+            }
+            return r;
 	}
 
 }

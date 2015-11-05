@@ -12,7 +12,8 @@ public class InterfazUsuario {
 	public void mostrarMenu() throws Exception {
             boolean salir=false;
             String menu="===MENU===\n"
-                    + "1. Annadir contacto";
+                    + "1. Annadir contacto"
+                    + "2. Buscar contacto";
             do{
                 switch(Leer.entero(menu)){
                     case 1:
@@ -28,6 +29,15 @@ public class InterfazUsuario {
                         
                     
                     case 2:
+                        if(u!=null){
+                           System.out.println(buscarcontacto());
+                        }
+                        else{
+                            System.out.println("No se ha logueado "
+                                    + "en el sistema");
+                        }
+                        break;
+                    case 3:
                         salir=true;
                         break;
                     
@@ -48,7 +58,7 @@ public class InterfazUsuario {
             
             
 	}
-
+        
 	public void registrarusuario() {
 		// TODO - implement InterfazUsuario.registrarusuario
 		throw new UnsupportedOperationException();
@@ -88,14 +98,11 @@ public class InterfazUsuario {
 		throw new UnsupportedOperationException();
 	}
 
-	public void buscarcontacto() {
-		// TODO - implement InterfazUsuario.buscarcontacto
-		throw new UnsupportedOperationException();
+	public Contacto buscarcontacto() {
+            System.out.println("Nombre solicitado");
+            String nombre=Leer.cadena();
+            return OperacionesUsuario.buscarContacto(u, nombre);
 	}
 
-	public void operation() {
-		// TODO - implement InterfazUsuario.operation
-		throw new UnsupportedOperationException();
-	}
 
 }

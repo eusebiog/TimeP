@@ -21,9 +21,8 @@ public class Contacto {
         
         
         
-	public void getNombre() {
-		// TODO - implement Contacto.getNombre
-		throw new UnsupportedOperationException();
+	public String getNombre() {
+		return nombre;
 	}
 
 	/**
@@ -69,5 +68,20 @@ public class Contacto {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+        
+        
+        public String toString(){
+            
+            String r="Nombre: "+nombre+"\n"
+                    + "Apellidos: "+apellidos+"\n"
+                    + "Telefono: "+telefono+"\n"
+                    + "Direccion: "+direccion+"\n";
+                    return r;
+        }
+        
+        
+        public boolean equals(Contacto c){
+            return c.getNombre().equals(nombre);
+        }
 
 }
