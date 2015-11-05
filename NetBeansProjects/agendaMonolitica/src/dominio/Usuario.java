@@ -9,6 +9,13 @@ public class Usuario {
 	private String contrasenna;
 	private Vector<Contacto> contactos;
 
+    public Usuario(String nombre, String apellidos, String contrasenna) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.contrasenna = contrasenna;
+        contactos=new Vector();
+    }
+
 	public String getNombre() {
 		return this.nombre;
 	}

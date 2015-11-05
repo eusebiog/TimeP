@@ -4,9 +4,8 @@ import java.util.Vector;
 
 public class OperacionesUsuario {
 
-	public void registrarUsuario() {
-		// TODO - implement OperacionesUsuario.registrarUsuario
-		throw new UnsupportedOperationException();
+	public static void registrarUsuario(Usuario u) {
+            u.guardarUsuario();
 	}
 
 	public Usuario autenticarUsuario() {

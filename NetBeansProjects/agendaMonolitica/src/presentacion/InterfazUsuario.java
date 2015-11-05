@@ -15,7 +15,8 @@ public class InterfazUsuario {
                     + "1. Annadir contacto"
                     + "2. Buscar contacto"
                     + "3. Borrar contacto"
-                    + "4. Modificar contacto";
+                    + "4. Modificar contacto"
+                    + "5. Registrar contacto";
             do{
                 switch(Leer.entero(menu)){
                     case 1:
@@ -61,6 +62,10 @@ public class InterfazUsuario {
                         }
                         break;
                     case 5:
+                        registrarusuario();
+                        System.out.println("Usuario registrado");
+                        break;
+                    case 6:
                         salir=true;
                         break;
                     
@@ -83,8 +88,17 @@ public class InterfazUsuario {
 	}
         
 	public void registrarusuario() {
-		// TODO - implement InterfazUsuario.registrarusuario
-		throw new UnsupportedOperationException();
+            System.out.println("Usuario nuevo");
+            System.out.println("Nombre de usuario");
+            String nombre=Leer.cadena();
+            System.out.println("Apellidos del usuario");
+            String apellidos=Leer.cadena();
+            System.out.println("contrasenna");
+            String contrasenna=Leer.cadena();
+            
+            Usuario u=new Usuario(nombre,apellidos,contrasenna);
+            
+            
 	}
 
 	public void autenticarusuario() {
