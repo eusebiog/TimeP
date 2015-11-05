@@ -115,7 +115,7 @@ public class InterfazUsuario {
 
 	public Usuario autenticarusuario() {
             
-            System.out.println("Nombre de usuario");
+             System.out.println("Nombre de usuario");
             String nombre=Leer.cadena();
             System.out.println("Contrasenna");
             String contrasenna=Leer.cadena();
